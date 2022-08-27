@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Players";
+}
+
+<div>
+    <h3>Players List</h3>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Shirt No</th>
+                <th>Appearances</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.Players != null)
+        {
+            foreach (var player in Model.Players)
+            {
+                <tr>
+                    <td> @player.Id </td>
+                    <td> @player.Name </td> 
+                    <td> @player.ShirtNo </td> 
+                    <td> @player.Appearances </td> 
+                    <td> @player.Goals </td> 
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>
